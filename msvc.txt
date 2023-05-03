@@ -1,0 +1,24 @@
+﻿Compiler: Visual C++ 2022/Microsoft Visual Studio Version 17.5.3
+Build: built with CMake, build variant = Release
+╭────────────┬────────┬────────┬───────┬────────┬───────┬───────────────────────────────────────────────┬─────────────╮
+│ ctor(cstr) │ ctor() │ copy() │ copy= │ move() │ move= │                                               │             │
+├────────────┼────────┼────────┼───────┼────────┼───────┼───────────────────────────────────────────────┼─────────────┤
+│ 1          │ 0      │ 1      │ 0     │ 0      │ 0     │ struct UserConstRef from a string literal     │ test string │
+│ 1          │ 0      │ 1      │ 0     │ 0      │ 0     │ struct UserConstRef from l-value reference    │ test string │
+│ 1          │ 0      │ 1      │ 0     │ 0      │ 0     │ struct UserConstRef from r-value reference    │ test string │
+│ 1          │ 0      │ 1      │ 0     │ 0      │ 0     │ struct UserConstRef from r-value reference2   │ test string │
+│            │        │        │       │        │       │                                               │             │
+│ 1          │ 0      │ 0      │ 0     │ 1      │ 0     │ struct UserByVal from a string literal        │ test string │
+│ 1          │ 0      │ 1      │ 0     │ 1      │ 0     │ struct UserByVal from l-value reference       │ test string │
+│ 1          │ 0      │ 0      │ 0     │ 2      │ 0     │ struct UserByVal from r-value reference       │ test string │
+│ 1          │ 0      │ 0      │ 0     │ 1      │ 0     │ struct UserByVal from r-value reference2      │ test string │
+│            │        │        │       │        │       │                                               │             │
+│ 1          │ 0      │ 0      │ 0     │ 1      │ 0     │ struct UserByRVal from a string literal       │ test string │
+│ 1          │ 0      │ 0      │ 0     │ 1      │ 0     │ struct UserByRVal from r-value reference      │ test string │
+│ 1          │ 0      │ 0      │ 0     │ 1      │ 0     │ struct UserByRVal from r-value reference2     │ test string │
+│            │        │        │       │        │       │                                               │             │
+│ 1          │ 0      │ 0      │ 0     │ 0      │ 0     │ struct UserPerfectFwd from a string literal   │ test string │
+│ 1          │ 0      │ 1      │ 0     │ 0      │ 0     │ struct UserPerfectFwd from l-value reference  │ test string │
+│ 1          │ 0      │ 0      │ 0     │ 1      │ 0     │ struct UserPerfectFwd from r-value reference  │ test string │
+│ 1          │ 0      │ 0      │ 0     │ 1      │ 0     │ struct UserPerfectFwd from r-value reference2 │ test string │
+╰────────────┴────────┴────────┴───────┴────────┴───────┴───────────────────────────────────────────────┴─────────────╯
